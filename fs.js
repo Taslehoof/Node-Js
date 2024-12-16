@@ -1,13 +1,27 @@
+const { error } = require('console')
 const fs = require('fs')
 
-const first = fs.readFileSync('./data/first.txt','utf8')
-const second = fs.readFileSync('./data/second.txt')
+// CODIGO SYNCRONO
 
-console.log(first)
-console.log(second.toString())
+//const first = fs.readFileSync('./data/first.txt','utf8')
+//const second = fs.readFileSync('./data/second.txt')
+//
+//console.log(first)
+//console.log(second.toString())
 
 //fs.writeFileSync('./data/third.txt','este es el tercer archivo')
 
-const title = 'este es el contenido del documento'
+//const title = 'este contenido ha sido añadido'
+//
+//fs.writeFileSync('./data/fourth.txt',title, {
+//   flag: 'a'
+//})
 
-fs.writeFileSync('./data/fourth.txt',title)
+//CODIGO ASYNCRONO
+
+fs.readFile('./data/first.txt', (error, data) => {
+    if(error){
+        console.log(error)
+    }
+    console.log(data.toString())
+})
