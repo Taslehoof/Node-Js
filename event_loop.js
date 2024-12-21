@@ -9,7 +9,13 @@ const server = http.createServer((req, res) => {
     }
     
     if(req.url === '/about'){
-        res.write('Abou page')
+        
+        // Task
+        for(let i = 0; i<100000; i++){
+            console.log(Math.random() * i)
+        }
+
+        res.write('About page')
         return res.end()
     }
 
